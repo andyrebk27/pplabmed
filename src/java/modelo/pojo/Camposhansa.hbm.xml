@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 01-10-2017 02:06:45 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.pojo.Camposhansa" table="camposhansa" schema="public" optimistic-lock="version">
+        <id name="idtblhansa" type="int">
+            <column name="idtblhansa" />
+            <generator class="assigned" />
+        </id>
+        <property name="orden" type="string">
+            <column name="orden" length="50" not-null="true" />
+        </property>
+        <property name="corr" type="string">
+            <column name="corr" length="30" />
+        </property>
+        <property name="paciente" type="string">
+            <column name="paciente" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" />
+        </property>
+        <property name="medico" type="string">
+            <column name="medico" />
+        </property>
+        <property name="edad" type="java.lang.Integer">
+            <column name="edad" />
+        </property>
+        <property name="sexo" type="java.lang.Character">
+            <column name="sexo" length="1" />
+        </property>
+        <property name="sede" type="string">
+            <column name="sede" />
+        </property>
+        <set name="histopatologias" table="histopatologia" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idtblhansa" />
+            </key>
+            <one-to-many class="modelo.pojo.Histopatologia" />
+        </set>
+        <set name="citologias" table="citologia" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idtblhansa" />
+            </key>
+            <one-to-many class="modelo.pojo.Citologia" />
+        </set>
+    </class>
+</hibernate-mapping>
