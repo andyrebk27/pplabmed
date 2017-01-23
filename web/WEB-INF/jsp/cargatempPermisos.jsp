@@ -9,7 +9,7 @@
         <c:if test="${valida > 0}">
 
             <c:set var="linea4" value="<div class='table-responsive'>"/>${linea4}
-            <c:set var="linea4" value="<table class='table table-striped' id='TablapermisosUsuarios'>"/>${linea4}
+            <c:set var="linea4" value="<table class='table table-striped table-striped table-bordered' style='background: #0C1F32' id='TablapermisosUsuarios'>"/>${linea4}
             <c:set var="linea4" value="<thead>"/>${linea4}
             <c:set var="linea4" value="<tr>"/>${linea4}
             <c:set var="linea4" value="<th nowrap WIDTH='15'>#</th>"/>${linea4}

@@ -6,7 +6,12 @@
     <div class="well bs-component">
         <form id="HistopatologiaForm" class="form-horizontal" method="POST" role="form">
             <fieldset>
-                <legend>Agregar Histopatología<div class="row" style="border-top: 1px dotted #c5daea;display: block;margin: 10px 0;"></div></legend>
+                <input type="hidden" id="code" value="${codigo}">
+                <legend>Agregar Histopatología <label id="codigofotohisto" class="control-label" >Id: ${codigo}</label>
+                    <div class="row" style="border-top: 1px dotted #c5daea;display: block;margin: 10px 0;"></div></legend>
+
+
+                
                 <div class="row">
                
                     <div class="col-md-3">

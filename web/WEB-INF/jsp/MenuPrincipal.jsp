@@ -21,7 +21,8 @@
            </ul>
         </li>
         <li class="dropdown">
-           <a class="dropdown-toggle" href="#" onclick="$('#processing-modal').modal('show');cargarContenido('subirarchivos.htm', 'contenido');$('#processing-modal').modal('hide');">Estadística Patología</a>               
+           <a class="dropdown-toggle" href="#" onclick="$('#processing-modal').modal('show');cargarContenido('Patologia.htm', 'contenido');$('#processing-modal').modal('hide');">Estadística Patología</a>               
+       
         </li>
         <li class="dropdown">
            <a class="dropdown-toggle" href="#" onclick="$('#processing-modal').modal('show');cargarContenido('BuscarReportes.htm', 'contenido');$('#processing-modal').modal('hide');">Hojas de Trabajo</a>

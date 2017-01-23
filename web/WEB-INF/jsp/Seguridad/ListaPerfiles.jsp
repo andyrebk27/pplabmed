@@ -84,14 +84,14 @@
         </div>
     </div>
 </div>                                 
-<div class="modal fade" id="desacper" role="dialog"  data-backdrop="static" aria-hidden="true">
+<div class="modal fade" id="desacper" role="dialog"  data-backdrop="static" aria-hidden="true" data-toggle="modal">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content">
+        <div class="modal-content" style="height:650px; overflow-y: auto; resize:vertical;">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title"> perfil</h4>
+                <h4 class="modal-title" style="font-weight:bold;">Actualizar Perfil</h4>
             </div>
-            <div class="modal-body" style="height: 360px; overflow-y: auto;">
+            <div class="modal-body" style="overflow-y: auto;">
                 <div id="cargaPreviaPerfil"></div>
             </div>
             <div class="modal-footer">

@@ -96,9 +96,9 @@
                     </div>
                 </div>
             </div> 
-        <h1 class="text-center">Perfiles asignados</h1>
+        <h3 class="text-center">Perfiles asignados</h3>
         <c:if test="${!empty listaPerfiles}">
-        <table  id="TablaUsuarios" class="table table-striped" style="width:70%; margin-left: 15%;">
+        <table  id="TablaUsuarios" class="table table-striped table-striped table-bordered" style="background: #0C1F32; width:70%; margin-left: 15%;">
             <thead>
                 <tr style="text-align:center">
                     <th style="text-align:center">No.</th>

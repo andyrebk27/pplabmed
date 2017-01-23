@@ -48,11 +48,11 @@
                 </div>
             </div>
         </div>
-        <h1 class="text-center">Permisos asignados</h1>
+        <h3 class="text-center">Permisos asignados</h3>
         <c:set var="valida" value="${fn:length(nomper)}" />
         <c:if test="${valida > 0}">
-            <c:set var="linea4" value="<div class='table-responsive'>"/>${linea4}
-            <c:set var="linea4" value="<table class='table table-striped' id='TablapermisosUsuarios'>"/>${linea4}
+            <c:set var="linea4" value="<div class='table-responsivetable'>"/>${linea4}
+            <c:set var="linea4" value="<table class='table table-striped table-striped table-bordered' id='TablapermisosUsuarios' style='background: #0C1F32'>"/>${linea4}
             <c:set var="linea4" value="<thead>"/>${linea4}
             <c:set var="linea4" value="<tr>"/>${linea4}
             <c:set var="linea4" value="<th nowrap WIDTH='15'>#</th>"/>${linea4}
