@@ -1,4 +1,5 @@
 
+package pplabmed.controller;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,12 +8,13 @@ import org.jdom2.Document;         // |
 import org.jdom2.Element;          // |\ Librerías
 import org.jdom2.JDOMException;    // |/ JDOM
 import org.jdom2.input.SAXBuilder; // |
-...
-public void cargarXml()
+
+@Controller
+public void subirarController(){
 {
     //Se crea un SAXBuilder para poder parsear el archivo
     SAXBuilder builder = new SAXBuilder();
-    File xmlFile = new File( "archivo.xml" );
+    File xmlFile = new File( "*.xml" );
     try
     {
         //Se crea el documento a traves del archivo
@@ -31,7 +33,7 @@ public void cargarXml()
             Element tabla = (Element) list.get(i);
  
             //Se obtiene el atributo 'nombre' que esta en el tag 'tabla'
-            String nombreTabla = tabla.getAttributeValue("nombre");
+            String nombreTabla = tabla.getAttributeValue("num_factura");
  
             System.out.println( "Tabla: " + nombreTabla );
  
@@ -64,4 +66,5 @@ public void cargarXml()
     }catch ( JDOMException jdomex ) {
         System.out.println( jdomex.getMessage() );
     }
+}
 }
