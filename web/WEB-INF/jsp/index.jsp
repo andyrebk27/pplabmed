@@ -31,16 +31,16 @@
                         <div class="panel-body">
                             <form id="loginform" class="form-horizontal" role="form" action="inicio.htm" method="POST">
                             <div style="margin-bottom: 5px" class="input-group loginaling">
-                                <span class="input-group-addon"><i id="iconouser" class="glyphicon glyphicon-user" style="color: black;"></i></span>
+                                <span class="input-group-addon"><i id="iconouser" class="glyphicon glyphicon-user" style="color: #DF691A;"></i></span>
                                 <input id="login-username" type="text" class="form-control schooltooltip" name="usernamelog" placeholder="Nombre de usuario" data-toggle="tooltip" title="Usuario">                                        
                             </div>
                             <div style="margin-bottom: 25px" class="input-group loginaling">
-                                <span class="input-group-addon"><i id="iconopassw" class="glyphicon glyphicon-lock" style="color: black;"></i></span>
+                                <span class="input-group-addon"><i id="iconopassw" class="glyphicon glyphicon-lock" style="color: #DF691A;"></i></span>
                                 <input id="login-password" type="password" class="form-control schooltooltip" name="passwordlog" placeholder="Contraseña" data-toggle="tooltip" title="Ingresar contraseña">
                             </div>
                             <div style="margin-top:15px" class="form-group">
                                 <div class="col-sm-12 controls">
-                                    <a id="btn-login" href="principal.htm" class="btn btn-lg btn-block mybtn-primary raised" style="color:white">Ingresar</a>     
+                                    <a id="btn-login" href="principal.htm" class="btn btn-lg btn-block mybtn-primary" style="color:white;">Ingresar</a>     
                                  </div>
                             </div>
                             <div class="form-group">

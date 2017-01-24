@@ -725,7 +725,9 @@ body.sidebar-nav {
   margin: 0 5px 5px 0;
   -webkit-transition: all 0.15s;
   -moz-transition: all 0.15s;
-  transition: all 0.15s; }
+  transition: all 0.15s;
+  touch-action: manipulation;
+}
   .btn.active {
     box-shadow: none; }
   .btn .caret {
@@ -3844,29 +3846,29 @@ body.fourofour {
 
 
 .mybtn-primary {
-    background: #26466d;
+    background: #4E5D6C;
     color: black;
 }
  
 .mybtn-primary:hover, .mybtn-primary:focus, .mybtn-primary:active, .mybtn-primary.active, .open > .dropdown-toggle.mybtn-primary {
-    background: #6781A1;
+    background: #df691a;
     color: white;
 }
  
 .mybtn-primary:active, .mybtn-primary.active {
-    background: #041B37;
+    background: #b15315 ;
     box-shadow: none;
 }
 
 .mybtn-primary.raised:active, .mybtn-primary.raised.active {
-    background: #041B37;
+    background: #b15315;
     box-shadow: none;
     margin-bottom: -3px;
     margin-top: 3px;
 }
 
 .mybtn-primary.raised:active, .mybtn-primary.raised.active {
-    background: #041B37;
+    background: #b15315;
     box-shadow: none;
     margin-bottom: -3px;
     margin-top: 3px;

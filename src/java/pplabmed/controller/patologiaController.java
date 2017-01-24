@@ -36,76 +36,34 @@ public String cargarXml(Model m, HttpServletRequest request)
          System.out.println("1");
         //Se obtiene la raiz 'tables'
         Element rootNode = document.getRootElement();
-        System.out.println("2");
-        //Se obtiene la lista de hijos de la raiz 'tables'
-        List list1 = rootNode.getChildren("Factura");
-        System.out.println("3");
-        //Se recorre la lista de hijos de 'tables'
-        for ( int i = 0; i < list1.size(); i++ )
-        {
-            //Se obtiene el elemento 'tabla'
-            Element factura = (Element) list1.get(i);
-            System.out.println("4");
-            //Se obtiene el atributo 'nombre' que esta en el tag 'tabla'
-            String idfactura = factura.getAttributeValue("id");
-            System.out.println("5");
-            System.out.println( "Factura: " + idfactura );
- 
-             //Se obtiene la lista de hijos del tag 'tabla'
-            List lista_campos = factura.getChildren();
- 
-                     //Se recorre la lista de campos
-            for ( int j = 0; j < lista_campos.size( ); j++ )
-            {
-                //Se obtiene el elemento 'campo'
-                Element campo = (Element)lista_campos.get( j );
-         
-                //Se obtienen los valores que estan entre los tags '<campo></campo>'
-                //Se obtiene el valor que esta entre los tags '<nombre></nombre>'
-                String numfact = campo.getChildTextTrim("num_factura");
+        
+        System.out.println("2 "+rootNode.getAttributeValue("id") );
+         System.out.println("2 "+rootNode.getChildTextTrim("num_factura"));
+          String numfact = rootNode.getChildTextTrim("num_factura");
  
                 //Se obtiene el valor que esta entre los tags '<tipo></tipo>'
-                String numcedula = campo.getChildTextTrim("num_cedula");
- 
+                String numcedula = rootNode.getChildTextTrim("num_cedula");
                 //Se obtiene el valor que esta entre los tags '<valor></valor>'
-                String nomcliente = campo.getChildTextTrim("nombre_completo_cliente");
-                String fechanac = campo.getChildTextTrim("fecha_nacimiento");
-                String correo = campo.getChildTextTrim("correo");
-                String sede = campo.getChildTextTrim("direccion_entrega_sede");
-                String medico = campo.getChildTextTrim("medico");
-                String status = campo.getChildTextTrim("status");
-                String sexo = campo.getChildTextTrim("sexo");
+                String nomcliente = rootNode.getChildTextTrim("nombre_completo_cliente");
+                String fechanac = rootNode.getChildTextTrim("fecha_nacimiento");
+                String correo = rootNode.getChildTextTrim("correo");
+                String sede = rootNode.getChildTextTrim("direccion_entrega_sede");
+                String medico = rootNode.getChildTextTrim("medico");
+                String status = rootNode.getChildTextTrim("status");
+                String sexo = rootNode.getChildTextTrim("sexo");
                 System.out.println( "\t"+nomcliente+"\t\t"+fechanac+"\t\t"+correo);
-            }
-            
-            
-        }
+       
         List list2 = rootNode.getChildren( "examenes" );
- 
-        //Se recorre la lista de hijos de 'tables'
+        String nomexamen2 = rootNode.getChildTextTrim("nombre_examen");
+        System.out.println("exa " +nomexamen2);
+       
         for ( int i = 0; i < list2.size(); i++ )
         {
-            //Se obtiene el elemento 'tabla'
-            Element examenes = (Element) list2.get(i);
-          
-            List lista_campos2 = examenes.getChildren();
- 
-                     //Se recorre la lista de campos
-            for ( int j = 0; j < lista_campos2.size(); j++ )
-            {
-                //Se obtiene el elemento 'campo'
-                Element campo = (Element)lista_campos2.get( j );
-         
-                 String nomexamen = campo.getChildTextTrim("nombre_examen");
- 
-                //Se obtiene el valor que esta entre los tags '<tipo></tipo>'
-              
-                System.out.println( "\t"+nomexamen+"\t\t");
-            }
-            
-            
+            System.out.println("lista " +list2.size());    
+            Element campo = (Element)list2.get( i );
+                String nomexamen = campo.getChildTextTrim("nombre_examen");
+                System.out.println( "\t"+i+"  "+nomexamen+"\t\t");
         }
-            
     }catch ( IOException io ) {
         System.out.println( io.getMessage() );
     }catch ( JDOMException jdomex ) {

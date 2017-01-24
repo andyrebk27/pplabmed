@@ -9,11 +9,9 @@
         <title>PIF Patologia</title>
         
         <link href="Resources/css/BaseStyle.css" rel="stylesheet" type="text/css"/>
-        
-        <link href="Resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="Resources/css/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
-          
         <link href="Resources/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/> 
+        <link href="Resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="Resources/css/sweetalert2.min.css" rel="stylesheet" type="text/css"/>        
         <link href="Resources/bootstrap/css/bootstrap_superhero.min.css" rel="stylesheet" type="text/css"/>
         
       
