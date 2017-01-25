@@ -63,8 +63,8 @@
   right: 0px;
   left: 70px;
   top: 9px;
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   border-radius: 10px;
   background: #283446;
   background: gradient-gradient(#36455b, #283446);
@@ -80,8 +80,8 @@
   content: "";
   display: inline-block;
   position: absolute;
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   left: 70px;
   top:9px;
   border-radius: 10px;

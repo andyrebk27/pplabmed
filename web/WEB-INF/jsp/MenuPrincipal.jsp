@@ -1,6 +1,6 @@
 <%@page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<nav class="navbar navbar-default active">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -13,7 +13,7 @@
             <a class="navbar-brand" href="#"  onclick="cargarContenido('vacio.htm', 'contenido');">PIFPatología</a>
             </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav active">
+            <ul class="nav navbar-nav">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Resultados<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
