@@ -17,7 +17,7 @@
                     <c:if test="${!empty listaUsuario}">
                         <table  id="TablapermisosUsuarios" class="table table-striped table-bordered"  cellspacing="0" width="100%">
                             <thead>
-                                <tr style="background: #0C1F32">
+                                <tr style="background: #485563">
                                     <th>Nombre</th>
                                     <th>Correo</th>
                                     <th>Acceso Web</th>

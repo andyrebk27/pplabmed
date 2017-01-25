@@ -23,7 +23,7 @@
                     <c:if test="${valida > 0}"> 
                            <table id="tablaperfiles" class="table table-striped table-bordered " cellspacing="0" width="100%">
                             <thead >
-                                <tr style="background: #0C1F32">
+                                <tr style="background: #485563">
                                     <th>No.</th>
                                     <th>Perfil</th>
                                     <th>Descripción</th>

@@ -13,7 +13,7 @@
                        <c:if test="${!empty ListaFirmas}">
                         <table  id="TablaListaFirmas" class="table table-striped table-bordered"  cellspacing="0" width="100%">
                             <thead>
-                                <tr style="background: #0C1F32">
+                                <tr style="background: #485563">
                                     <th style="text-align:center">No.</th>
                                     <th style="text-align:center">Nombre</th>
                                     <th style="text-align:center">Codigo</th>

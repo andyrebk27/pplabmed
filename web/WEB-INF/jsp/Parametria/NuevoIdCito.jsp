@@ -6,7 +6,7 @@
     <div class="bs-component">
         <div class="panel panel-default" style="box-shadow:0 5px 15px rgba(0, 0, 0, 0.5);">
             <button type="button" class="btn btn-primary close" onclick="cargarContenido('vacio.htm', 'contenido');" >&times; </button>
-            <div class="panel-heading">Agregar Id Citologías</div>
+            <div class="panel-heading"><h4>Agregar Id Citologías</h4></div>
             <div class="panel-body">
                 <form class="form-horizontal">
                     <fieldset>
