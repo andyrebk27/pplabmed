@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 <div class="row">
-    <link href="../../../Resources/bootstrap/css/bootstrap_superhero.min.css" rel="stylesheet" type="text/css"/>
+    <link href="Resources/css/radiotablestyle.css" rel="stylesheet" type="text/css"/>
     <div class="col-md-1"></div>
     <div class="col-md-10" id="pagina">
    <!--     <div class="well bs-component"> -->
@@ -31,12 +31,18 @@
                                         <tr  scope="row">
                                             <td>${contador}</td>
                                             <td><c:out value="${Area.getNombre()}" /></td>
-                                            <c:if test="${Area.isEstado()}">
-                                                <td align="center"><img src="Resources/image/desactivar.png" alt="" width="40" onclick="estAreaEdit('${Area.getIdtblarea()}', '${Area.isEstado()}');" style="cursor:pointer;"/></td>
-                                                </c:if>
-                                                <c:if test="${!Area.isEstado()}">
-                                                <td align="center"><img src="Resources/image/activar.png" alt="" width="40" onclick="estAreaEdit('${Area.getIdtblarea()}', '${Area.isEstado()}');" style="cursor:pointer;"/></td>
-                                                </c:if>
+                                           <td align="center"> 
+                                                <div class="switch">
+                                                    <c:if test="${Area.isEstado() eq 'true'}">
+                                                    <input type="checkbox"  id="Estado" name="toggle" checked onclick="estAreaEdit('${Area.getIdtblarea()}', '${Area.isEstado()}');">
+                                                    </c:if> 
+                                                    <c:if test="${Area.isEstado() eq 'false'}">
+                                                    <input type="checkbox"  id="Estado" name="toggle" onclick="estAreaEdit('${Area.getIdtblarea()}', '${Area.isEstado()}');">
+                                                    </c:if>
+                                                    <label for="toggle"><i></i></label>
+                                                    <span></span>
+                                                </div>
+                                            </td>
                                             <td align="center"><img src="Resources/image/Ver.png" style="cursor:pointer;" onclick="cargaInfoArea(${Area.getIdtblarea()})" alt="" height="30" width="30"/></td>                       
                                         </tr>
                                     </c:forEach>    
