@@ -1,30 +1,33 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <!DOCTYPE html>
 <div class="row">
     <link href="Resources/css/radiotablestyle.css" rel="stylesheet" type="text/css"/>
     <div class="col-md-1"></div>
     <div class="col-md-10" id="pagina">
-   <!--     <div class="well bs-component"> -->
-            <fieldset>
-            <legend>Lista Areas</legend></legend>    
-            <div class="col-md-1">
-            </div>
-            <div class="row" style="font-family:Helvetica">
+    <div class="bs-component">
+        <div class="panel panel-default" style="box-shadow:0 5px 15px rgba(0, 0, 0, 0.5);">   
+        <a class="close"  onclick="cargarContenido('vacio.htm', 'contenido');" >&times; </a>       
+       <!-- <button type="button" class="close"  st onclick="cargarContenido('vacio.htm', 'contenido');" >&times; </button>-->
+        <div class="panel-heading"><h3>Lista Áreas</h3></div>
+        <div class="panel-body">    
+        <fieldset>
+            <br/>
+            <div class="col-md-1"></div>
+            
                 <div class="col-md-10">
                     <div class="form-group">
                         <c:if test="${!empty listaArea}">
                             <table  id="TablaAreas"  style="font-family:Georgia;" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                                <thead>
-                                    <tr style="background: #485563">
+                                 <thead>
+                                    <tr style="text-align:center; background: #253746; border-bottom: 3px solid #ccc;margin: 0 15px; font-weight:14px;">
                                         <th style="text-align:center">No.</th>
                                         <th style="text-align:center">Nombre</th>
                                         <th style="text-align:center">Estado</th>                                  
                                         <th style="text-align:center">Editar</th>
                                     </tr>
                                 </thead>
-                                <tbody class="previous pager ">
+                                <tbody>
                                     <c:set var="contador" value="${0}" />
                                     <c:forEach items="${listaArea}" var="Area">
                                         <c:set var="contador" value="${contador+1}" />
@@ -54,11 +57,17 @@
                 </div>                
             </div> 
             <br/>
-            <br/>
-            <br/>
-            <br/>
             </fieldset>
-        <!--</div>-->
+            <div class="panel-footer">
+                <div class="col-md-8"></div>
+                <!--<button  id="btn-salir" type="button" class="btn btn-default" data-dismiss="modal" onclick="cargarContenido('vacio.htm', 'contenido');">Salir</button>-->
+                <br>
+                <br>
+                <br>
+            </div>
+            </div>
+                          
+        </div>
         <div class="col-md-1"></div>
     </div>
 </div>  

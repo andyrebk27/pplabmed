@@ -103,39 +103,75 @@ function enviarUsuario(){
 }
 
 
-function estUserEdit(id,est){
+
+
+function estUserEdit(id, est) {
     var estadoA = "";
-    if(est==="true"){
-        est='false';
-        estadoA="Desactivado";
-    }else{
-        est='true';
-        estadoA="Activado"
-    ;}
-    swal({
-        title: 'Alerta!',
-        text: "Desea cambiar el estado del perfil, al modo "+estadoA+"?",
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Si',
-        cancelButtonText: 'No'
-    }).then(function() {
-            $('#processing-modal').modal('show');
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (xhttp.readyState == 4 && xhttp.status == 200) {
-                    $('#processing-modal').modal('hide');
-                    cargarContenido("ListaUsuarios.htm","contenido");
-                }
-            }
-            xhttp.open("POST", "updUsrEstado.htm", true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("idp=" + id +"&bol="+est);
-    });
-    
+    var xhttp = new XMLHttpRequest();
+    if (est === "true") {
+        est = 'false';
+        estadoA = "Desactivado";
+    } else {
+        est = 'true';
+        estadoA = "Activado";
+    }
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            document.getElementById("cargaPreviaUser").innerHTML = xhttp.responseText;
+            swal({
+                title: 'Estado modificado.',
+                text: "",
+                type: 'success',
+                timer: 2000
+            }).then(function () {
+                $('#processing-modal').modal('hide');
+                $('#processing-modal').modal('hide');
+                $('#editaarea').modal('hide');
+                cargarContenido("ListaUsuarios.htm", "contenido");
+            });
+        }
+    };
+    xhttp.open("POST", "updUsrEstado.htm", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("idp=" + id + "&bol=" + est);
 }
+
+
+
+
+//function estUserEdit(id,est){
+//    var estadoA = "";
+//    if(est==="true"){
+//        est='false';
+//        estadoA="Desactivado";
+//    }else{
+//        est='true';
+//        estadoA="Activado"
+//    ;}
+//    swal({
+//        title: 'Alerta!',
+//        text: "Desea cambiar el estado del perfil, al modo "+estadoA+"?",
+//        type: 'warning',
+//        showCancelButton: true,
+//        confirmButtonColor: '#3085d6',
+//        cancelButtonColor: '#d33',
+//        confirmButtonText: 'Si',
+//        cancelButtonText: 'No'
+//    }).then(function() {
+//            $('#processing-modal').modal('show');
+//            var xhttp = new XMLHttpRequest();
+//            xhttp.onreadystatechange = function () {
+//                if (xhttp.readyState == 4 && xhttp.status == 200) {
+//                    $('#processing-modal').modal('hide');
+//                    cargarContenido("ListaUsuarios.htm","contenido");
+//                }
+//            }
+//            xhttp.open("POST", "updUsrEstado.htm", true);
+//            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//            xhttp.send("idp=" + id +"&bol="+est);
+//    });
+//    
+//}
 
 function updateUsuario(){
     $('#processing-modal').modal('show');        

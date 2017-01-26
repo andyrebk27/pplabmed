@@ -55,38 +55,74 @@ function enviarCatCitologia(){
 }
 
 
-function estadoCatCitologiaEdit(id,est){
+
+
+
+function estadoCatCitologiaEdit(id, est) {
     var estadoA = "";
-    if(est==="true"){
-        est='false';
-        estadoA="Desactivado";
-    }else{
-        est='true';
-        estadoA="Activado"
-    ;}
-    swal({
-        title: 'Alerta!',
-        text: "Desea cambiar el estado del Registro, al modo "+estadoA+"?",
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Si',
-        cancelButtonText: 'No'
-    }).then(function() {
-            $('#processing-modal').modal('show');
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (xhttp.readyState == 4 && xhttp.status == 200) {
-                    $('#processing-modal').modal('hide');
-                    cargarContenido("ListaIDCitologia.htm","contenido");
-                }
-            }
-            xhttp.open("POST", "upCatcitologiaEstado.htm", true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("idp="+id+"&bol="+est);
-    });
+    var xhttp = new XMLHttpRequest();
+    if (est === "true") {
+        est = 'false';
+        estadoA = "Desactivado";
+    } else {
+        est = 'true';
+        estadoA = "Activado";
+    }
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            document.getElementById("cargaPreviaCatCitologia").innerHTML = xhttp.responseText;
+            swal({
+                title: 'Estado modificado.',
+                text: "",
+                type: 'success',
+                timer: 2000
+            }).then(function () {
+                $('#processing-modal').modal('hide');
+                $('#processing-modal').modal('hide');
+                $('#editaarea').modal('hide');
+                cargarContenido("ListaIDCitologia.htm", "contenido");
+            });
+        }
+    };
+    xhttp.open("POST", "upCatcitologiaEstado.htm", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("idp=" + id + "&bol=" + est);
 }
+
+
+
+//function estadoCatCitologiaEdit(id,est){
+//    var estadoA = "";
+//    if(est==="true"){
+//        est='false';
+//        estadoA="Desactivado";
+//    }else{
+//        est='true';
+//        estadoA="Activado"
+//    ;}
+//    swal({
+//        title: 'Alerta!',
+//        text: "Desea cambiar el estado del Registro, al modo "+estadoA+"?",
+//        type: 'warning',
+//        showCancelButton: true,
+//        confirmButtonColor: '#3085d6',
+//        cancelButtonColor: '#d33',
+//        confirmButtonText: 'Si',
+//        cancelButtonText: 'No'
+//    }).then(function() {
+//            $('#processing-modal').modal('show');
+//            var xhttp = new XMLHttpRequest();
+//            xhttp.onreadystatechange = function () {
+//                if (xhttp.readyState == 4 && xhttp.status == 200) {
+//                    $('#processing-modal').modal('hide');
+//                    cargarContenido("ListaIDCitologia.htm","contenido");
+//                }
+//            }
+//            xhttp.open("POST", "upCatcitologiaEstado.htm", true);
+//            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//            xhttp.send("idp="+id+"&bol="+est);
+//    });
+//}
 
 
 function cargaInfoCatCitologia(id){
