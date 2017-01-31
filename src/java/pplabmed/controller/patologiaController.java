@@ -25,10 +25,8 @@ import javax.swing.*;
 
 @Controller
 public class patologiaController {
-
     @RequestMapping(value = "cargarxml.htm")
-    public String cargarXml(Model m, HttpServletRequest request) {
-
+    public String cargarXml(Model m, HttpServletRequest request) {        
         String sDirectorio = "C:\\Users\\SinergiaPC\\Desktop\\xml_facturas\\ficheros Nuevos\\";
         File f = new File(sDirectorio);
         if (f.exists()) {
@@ -38,7 +36,7 @@ public class patologiaController {
                
                 SAXBuilder builder = new SAXBuilder();
                 File xmlFile = new File("C:\\Users\\SinergiaPC\\Desktop\\xml_facturas\\ficheros Nuevos\\"+ficheros[x].getName());
-                                          
+                                    
                 
                 try {
                     Document document = (Document) builder.build(xmlFile);
@@ -87,6 +85,8 @@ public class patologiaController {
    
         return "principal";
     }
+    
+    
 }
 
 
