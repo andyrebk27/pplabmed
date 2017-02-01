@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <div class="col-md-3"></div>
 <div class="col-md-6" style="/* background-color: black; */">
-    <link href="Resources/css/radiostyle.css" rel="stylesheet" type="text/css"/>
+   
     <div class="bs-component">
         <div class="panel panel-default" style="box-shadow:0 5px 15px rgba(0, 0, 0, 0.5);">
             <button type="button" class="btn btn-primary close" onclick="cargarContenido('vacio.htm', 'contenido');" >&times; </button>

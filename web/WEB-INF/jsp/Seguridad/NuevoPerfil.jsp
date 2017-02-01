@@ -3,8 +3,7 @@
 <!DOCTYPE html>
 <div class="col-md-3"></div>
 <div class="col-md-6" id="pagina" style="/* background-color: black; */">
-    <link href="Resources/css/radiostyle.css" rel="stylesheet" type="text/css"/>
-    <div class="bs-component">
+       <div class="bs-component">
         <div class="panel panel-default" style="box-shadow:0 5px 15px rgba(0, 0, 0, 0.5);">
             <button type="button" class="btn btn-primary close" onclick="cargarContenido('vacio.htm', 'contenido');" >&times; </button>
             <div class="panel-heading"><h4>Agregar Perfil</h4></div>
@@ -35,6 +34,7 @@
                             </div>
                         </div>
                         <br>
+                        
                         <aside id="info-block">
                             <section class="file-marker">
                                 <div>
@@ -74,6 +74,8 @@
                                 </div>
                             </section>
                         </aside>
+                        
+                        
                         <br>
                     </fieldset>
                     <div class="row">

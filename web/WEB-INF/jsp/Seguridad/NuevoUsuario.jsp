@@ -1,7 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<link href="Resources/css/radiostyle.css" rel="stylesheet" type="text/css"/>
 <div class="col-md-3"></div>
 <div class="col-md-6" id="pagina" style="/* background-color: black; */">
     <div class="bs-component">

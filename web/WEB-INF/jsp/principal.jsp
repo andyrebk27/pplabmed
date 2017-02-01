@@ -7,6 +7,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>PIF Patologia</title>
+        <link href="Resources/css/radiotablestyle.css" rel="stylesheet" type="text/css"/>
+        <link href="Resources/css/radiostyle.css" rel="stylesheet" type="text/css"/>
         <link href="Resources/css/BaseStyle.css" rel="stylesheet" type="text/css"/>
         <link href="Resources/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/> 
         <link href="Resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>

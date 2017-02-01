@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<link href="Resources/css/radiostyle.css" rel="stylesheet" type="text/css"/>
+
 <div class="col-md-3"></div>
 <div class="col-md-6" style="/* background-color: black; */">
     <div class="bs-component">   

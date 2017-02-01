@@ -7,13 +7,12 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <!DOCTYPE html>
 <div class="row">
-    <link href="Resources/css/radiotablestyle.css" rel="stylesheet" type="text/css"/>
     <div class="col-md-1"></div>
     <div class="col-md-10" id="pagina">
         <div class="bs-component">
             <div class="panel panel-default" style="box-shadow:0 5px 15px rgba(0, 0, 0, 0.5);">        
                 <a class="close"  onclick="cargarContenido('vacio.htm', 'contenido');" >&times; </a>        
-                <div class="panel-heading"><h3>Lista Usuarios</h3></div>   
+                <div class="panel-heading"><h4>Lista Usuarios</h4></div>   
                 <div class="panel-body">    
                     <fieldset>
                         <br/>
@@ -52,7 +51,7 @@
                                                             </c:if>
 
                                                             <td align="center"> 
-                                                                <div class="switch">
+                                                                <div class="switch2">
                                                                     <c:if test="${Usuario.isEstado() eq 'true'}">
                                                                         <input type="checkbox"  id="Estado" name="toggle" checked onclick="estUserEdit('${Usuario.getIdtblusuarios()}', '${Usuario.isEstado()}');" style="cursor:pointer;"/>
                                                                     </c:if> 

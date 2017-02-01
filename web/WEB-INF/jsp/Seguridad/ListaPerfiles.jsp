@@ -15,7 +15,7 @@
         <div class="bs-component">           
             <div class="panel panel-default" style="box-shadow:0 5px 15px rgba(0, 0, 0, 0.5);">
                 <a class="close"  onclick="cargarContenido('vacio.htm', 'contenido');" >&times; </a>       
-                <div class="panel-heading"><h3>Lista Perfiles</h3></div>
+                <div class="panel-heading"><h4>Lista Perfiles</h4></div>
                 <div class="panel-body">    
                     <fieldset>
                         <br>
@@ -45,7 +45,7 @@
                                                                 <td>${nomperf[i]}</td>
                                                                 <td>${desL[i]}</td>
                                                                  <td align="center"> 
-                                                                    <div class="switch">
+                                                                    <div class="switch2">
                                                                        <c:if test="${estL[i] eq 'true'}">
                                                                             <input type="checkbox"  id="Estado" name="toggle" checked onclick="estPerfilEdita('${idp[i]}', '${estL[i]}');">
                                                                         </c:if> 
@@ -56,13 +56,6 @@
                                                                         <span></span>
                                                                     </div>
                                                                 </td>                                                                                                             
-                                                                <!--<td align="center"><c:if test="${estL[i] eq 'false'}">
-                                                                        <a onclick="estPerfilEdita('${idp[i]}', '${estL[i]}');" style="cursor:pointer;"><img src="Resources/image/activar.png" alt="" width="40"/></a>
-                                                                        </c:if>
-                                                                        <c:if test="${estL[i] eq 'true'}">
-                                                                        <a onclick="estPerfilEdita('${idp[i]}', '${estL[i]}');" style="cursor:pointer;"><img src="Resources/image/desactivar.png" alt="" width="40"/></a>
-                                                                        </c:if>
-                                                                </td>  --> 
                                                                 <td align="center"><a style="cursor:pointer;" onclick="cargaPerfilEdita('${idp[i]}');"><img src="Resources/image/Ver.png" alt="" height="30" width="30"/></a></td>   
                                                             </tr>
                                                         </c:forEach>	
