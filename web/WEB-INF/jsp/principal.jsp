@@ -7,21 +7,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>PIF Patologia</title>
-        
         <link href="Resources/css/BaseStyle.css" rel="stylesheet" type="text/css"/>
         <link href="Resources/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/> 
         <link href="Resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="Resources/css/sweetalert2.min.css" rel="stylesheet" type="text/css"/>        
         <link href="Resources/bootstrap/css/bootstrap_superhero.min.css" rel="stylesheet" type="text/css"/>
-        
-      
-        
        <!-- <link href="Resources/css/BaseStyle.css" rel="stylesheet" type="text/css"/> -->
     </head>
-    <body id="imagenBack" onload="cargarContenido('menu.htm', 'page-menu');">   
+    <body id="imagenBack" onload="cargarContenido('menu.htm','page-menu');" >   
         <div id="page-menu"></div>
         <div id="contenido" class="col-md-12"></div>
-        
+        <img  alt=""/>
         <script src="Resources/js/jquery-1.12.4.min.js" type="text/javascript"></script>
         <script src="Resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="Resources/js/cargar.pag.ajax.js" type="text/javascript"></script>  
@@ -35,7 +31,6 @@
         <script src="Resources/js/FirmasScript.js" type="text/javascript"></script>
         <script src="Resources/js/jquery.dataTables.min.js" type="text/javascript"></script> 
         <script src="Resources/js/CatCitologiaScripts.js" type="text/javascript"></script>
-       
     </body>
 </html>
 

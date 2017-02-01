@@ -34,7 +34,7 @@
                                         <tr  scope="row">
                                             <td>${contador}</td>
                                             <td><c:out value="${Area.getNombre()}" /></td>
-                                           <td align="center"> 
+                                           <td align="center" style="vertical-align:middle;"> 
                                                 <div class="switch">
                                                     <c:if test="${Area.isEstado() eq 'true'}">
                                                     <input type="checkbox"  id="Estado" name="toggle" checked onclick="estAreaEdit('${Area.getIdtblarea()}', '${Area.isEstado()}');">
@@ -46,7 +46,7 @@
                                                     <span></span>
                                                 </div>
                                             </td>
-                                            <td align="center"><img src="Resources/image/Ver.png" style="cursor:pointer;" onclick="cargaInfoArea(${Area.getIdtblarea()})" alt="" height="30" width="30"/></td>                       
+                                            <td align="center"><img src="Resources/image/Ver.png" style="cursor:pointer;" onclick="cargaInfoArea(${Area.getIdtblarea()})" alt="" height="25" width="25"/></td>                       
                                         </tr>
                                     </c:forEach>    
                                 </tbody>

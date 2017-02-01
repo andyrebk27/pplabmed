@@ -9,8 +9,7 @@
                 <span class="icon-bar"></span>
                
             </button>
-             <img src="Resources/image/Lineas Azules-01.png" style="max-width: 150px; margin-top:0px; margin-right:10px;" alt="" class="pull-left"/>
-            <a class="navbar-brand" href="#"  onclick="cargarContenido('vacio.htm', 'contenido');">PIFPatología</a>
+             <a class="navbar-brand" href="#"  onclick="cargarContenido('vacio.htm', 'contenido');">PIFPatología</a>
             </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">

@@ -1,7 +1,8 @@
 package modelo.pojo;
-// Generated 01-10-2017 02:06:43 PM by Hibernate Tools 4.3.1
+// Generated 1/02/2017 08:05:29 AM by Hibernate Tools 4.3.1
 
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,14 +13,15 @@ public class Camposhansa  implements java.io.Serializable {
 
 
      private int idtblhansa;
-     private String orden;
+     private String idfactura;
      private String corr;
      private String paciente;
-     private String direccion;
      private String medico;
-     private Integer edad;
-     private Character sexo;
      private String sede;
+     private String nocedula;
+     private String estado;
+     private Boolean sexo;
+     private Date fechanac;
      private Set histopatologias = new HashSet(0);
      private Set citologias = new HashSet(0);
 
@@ -27,20 +29,21 @@ public class Camposhansa  implements java.io.Serializable {
     }
 
 	
-    public Camposhansa(int idtblhansa, String orden) {
+    public Camposhansa(int idtblhansa, String idfactura) {
         this.idtblhansa = idtblhansa;
-        this.orden = orden;
+        this.idfactura = idfactura;
     }
-    public Camposhansa(int idtblhansa, String orden, String corr, String paciente, String direccion, String medico, Integer edad, Character sexo, String sede, Set histopatologias, Set citologias) {
+    public Camposhansa(int idtblhansa, String idfactura, String corr, String paciente, String medico, String sede, String nocedula, String estado, Boolean sexo, Date fechanac, Set histopatologias, Set citologias) {
        this.idtblhansa = idtblhansa;
-       this.orden = orden;
+       this.idfactura = idfactura;
        this.corr = corr;
        this.paciente = paciente;
-       this.direccion = direccion;
        this.medico = medico;
-       this.edad = edad;
-       this.sexo = sexo;
        this.sede = sede;
+       this.nocedula = nocedula;
+       this.estado = estado;
+       this.sexo = sexo;
+       this.fechanac = fechanac;
        this.histopatologias = histopatologias;
        this.citologias = citologias;
     }
@@ -52,12 +55,12 @@ public class Camposhansa  implements java.io.Serializable {
     public void setIdtblhansa(int idtblhansa) {
         this.idtblhansa = idtblhansa;
     }
-    public String getOrden() {
-        return this.orden;
+    public String getIdfactura() {
+        return this.idfactura;
     }
     
-    public void setOrden(String orden) {
-        this.orden = orden;
+    public void setIdfactura(String idfactura) {
+        this.idfactura = idfactura;
     }
     public String getCorr() {
         return this.corr;
@@ -73,13 +76,6 @@ public class Camposhansa  implements java.io.Serializable {
     public void setPaciente(String paciente) {
         this.paciente = paciente;
     }
-    public String getDireccion() {
-        return this.direccion;
-    }
-    
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
     public String getMedico() {
         return this.medico;
     }
@@ -87,26 +83,40 @@ public class Camposhansa  implements java.io.Serializable {
     public void setMedico(String medico) {
         this.medico = medico;
     }
-    public Integer getEdad() {
-        return this.edad;
-    }
-    
-    public void setEdad(Integer edad) {
-        this.edad = edad;
-    }
-    public Character getSexo() {
-        return this.sexo;
-    }
-    
-    public void setSexo(Character sexo) {
-        this.sexo = sexo;
-    }
     public String getSede() {
         return this.sede;
     }
     
     public void setSede(String sede) {
         this.sede = sede;
+    }
+    public String getNocedula() {
+        return this.nocedula;
+    }
+    
+    public void setNocedula(String nocedula) {
+        this.nocedula = nocedula;
+    }
+    public String getEstado() {
+        return this.estado;
+    }
+    
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    public Boolean getSexo() {
+        return this.sexo;
+    }
+    
+    public void setSexo(Boolean sexo) {
+        this.sexo = sexo;
+    }
+    public Date getFechanac() {
+        return this.fechanac;
+    }
+    
+    public void setFechanac(Date fechanac) {
+        this.fechanac = fechanac;
     }
     public Set getHistopatologias() {
         return this.histopatologias;
