@@ -16,7 +16,7 @@
         <link href="Resources/bootstrap/css/bootstrap_superhero.min.css" rel="stylesheet" type="text/css"/>
        <!-- <link href="Resources/css/BaseStyle.css" rel="stylesheet" type="text/css"/> -->
     </head>
-    <body id="imagenBack" onload="cargarContenido('menu.htm','page-menu');" >   
+    <body id="imagenBack" onload="cargarContenido('menu.htm','page-menu');cargarContenido('vacio.htm', 'contenido');" >   
         <div id="page-menu"></div>
         <div id="contenido" class="col-md-12"></div>
         <img  alt=""/>
