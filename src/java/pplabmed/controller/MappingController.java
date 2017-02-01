@@ -51,6 +51,12 @@ public class MappingController {
         return "MenuPrincipal";
     }
     
+    
+    @RequestMapping("/logo.htm")
+    public String logo(){
+        return "logo";
+    }
+    
 //    @RequestMapping("/histopatologia.htm")
 //    public String ResultadoHispatologia(){
 //        return "Resultados/Histopatologia";
