@@ -44,7 +44,7 @@
                                                                 <td>${contador}</td>
                                                                 <td>${nomperf[i]}</td>
                                                                 <td>${desL[i]}</td>
-                                                                 <td align="center"> 
+                                                                 <td align="center" style="vertical-align: middle;"> 
                                                                     <div class="switch2">
                                                                        <c:if test="${estL[i] eq 'true'}">
                                                                             <input type="checkbox"  id="Estado" name="toggle" checked onclick="estPerfilEdita('${idp[i]}', '${estL[i]}');">
