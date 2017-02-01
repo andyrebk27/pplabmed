@@ -34,7 +34,6 @@ public class patologiaController {
             String user = "root";
             int port = 22;
             Session session = jsch.getSession(user, host, port);
-            // username and password will be given via UserInfo interface.
             session.setPassword("labmedicos2016!");
             Properties prop = new Properties();
             prop.put("StrictHostKeyChecking", "no");
@@ -58,14 +57,10 @@ public class patologiaController {
                                 archivos.add(((com.jcraft.jsch.ChannelSftp.LsEntry) obj).getLongname());
                                 System.out.println("Agrego: " + ((com.jcraft.jsch.ChannelSftp.LsEntry) obj).getFilename());
                                 c.get("/home/cust/HansaWorld/sinergia/" + ((com.jcraft.jsch.ChannelSftp.LsEntry) obj).getFilename(), ruta + ((com.jcraft.jsch.ChannelSftp.LsEntry) obj).getFilename());
-
-                                //c.get("/home/cust/HansaWorld/sinergia/" + ((com.jcraft.jsch.ChannelSftp.LsEntry) obj).getFilename(),"/home/cust/HansaWorld/sinergia/cargados/" + ((com.jcraft.jsch.ChannelSftp.LsEntry) obj).getFilename());
                                 System.out.println("Agrego: " + ((com.jcraft.jsch.ChannelSftp.LsEntry) obj).getFilename());
-                                //*String sDirectorio = "C:\\Users\\SinergiaPC\\Desktop\\xml_facturas\\ficheros Nuevos\\";
                                 System.out.println(ruta + ((com.jcraft.jsch.ChannelSftp.LsEntry) obj).getFilename());
                                 SAXBuilder builder = new SAXBuilder();
                                 File xmlFile = new File(ruta + ((com.jcraft.jsch.ChannelSftp.LsEntry) obj).getFilename());
-                                /* File xmlFile = new File("C:\\Users\\SinergiaPC\\Desktop\\xml_facturas\\ficheros Nuevos\\" + ficheros[x].getName());*/
                                 try {
                                     Document document = (Document) builder.build(xmlFile);
                                     Element rootNode = document.getRootElement();
@@ -84,14 +79,11 @@ public class patologiaController {
                                     System.out.println("\t Medico " + medico);
                                     System.out.println("\t Estatus " + status);
                                     System.out.println("\t Sexo " + sexo);
-                                    //Element roodNode = document.getRootElement();
-                                    //List list2 = rootNode.getChildren("examenes");
                                     Element apiName = rootNode.getChild("examenes");
                                     List list2 = apiName.getChildren("nombre_examen");
                                     System.out.println("\t tamaño lista " + list2.size());
                                     List<Element> typeContent = rootNode.getChildren("examenes");
                                     for (int i = 0; i < typeContent.size(); i++) {
-                                        //List<Element> list = typeContent.getChildren("nombre_examen");
                                         if (typeContent.size() > 0) {
                                             Element element = typeContent.get(i);
                                             List paramChilds = element.getChildren("nombre_examen");
@@ -101,7 +93,6 @@ public class patologiaController {
                                             }
                                         }
                                     }
-
                                 } catch (IOException io) {
                                     System.out.println(io.getMessage());
                                 } catch (JDOMException jdomex) {

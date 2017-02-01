@@ -17,86 +17,72 @@
                     <fieldset>
                         <br/>
                         <div class="col-md-1"></div>
-                        
-                            <div class="col-md-10">
-                                <div class="form-group">
-                                    <c:if test="${!empty listaUsuario}">
-                                        <table  id="TablapermisosUsuarios"  class="table table-striped table-bordered" cellspacing="0" width="100%">
-                                            <thead>
-                                                <tr style="text-align:center; background: #253746; border-bottom: 3px solid #ccc;margin: 0 15px; font-weight:14px;">
-                                                    <th style="text-align:center;">Nombre</th>
-                                                    <th>Correo</th>
-                                                    <th>Acceso Web</th>
-                                                    <th>Acceso Movil</th>
-                                                    <th>Estado</th>                                  
-                                                    <th>Editar</th>
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <c:if test="${!empty listaUsuario}">
+                                    <table  id="TablapermisosUsuarios"  class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr style="text-align:center; background: #253746; border-bottom: 3px solid #ccc;margin: 0 15px; font-weight:14px;">
+                                                <th style="text-align:center;">Nombre</th>
+                                                <th>Correo</th>
+                                                <th>Acceso Web</th>
+                                                <th>Acceso Movil</th>
+                                                <th>Estado</th>                                  
+                                                <th>Editar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <c:forEach items="${listaUsuario}" var="Usuario">
+                                                <tr  scope="row">
+                                                    <td><c:out value="${Usuario.getNombre()}" /></td>
+                                                    <td><c:out value="${Usuario.getCorreo()}" /></td>
+                                                    <c:if test="${Usuario.isAccesomovil()}">
+                                                        <td align="center"><img src="Resources/image/check.png" alt="" height="20" width="20"/></td>
+                                                        </c:if>
+                                                        <c:if test="${!Usuario.isAccesomovil()}">
+                                                        <td align="center"><img src="Resources/image/error.png" alt="" height="20" width="20"/></td>
+                                                        </c:if>
+                                                        <c:if test="${Usuario.isAccesoweb()}">
+                                                        <td align="center"><img src="Resources/image/check.png" alt="" height="20" width="20"/></td>
+                                                        </c:if>
+                                                        <c:if test="${!Usuario.isAccesoweb()}">
+                                                        <td align="center"><img src="Resources/image/error.png" alt="" height="20" width="20"/></td>                                            
+                                                        </c:if>
+                                                    <td align="center"> 
+                                                        <div class="switch2">
+                                                            <c:if test="${Usuario.isEstado() eq 'true'}">
+                                                                <input type="checkbox"  id="Estado" name="toggle" checked onclick="estUserEdit('${Usuario.getIdtblusuarios()}', '${Usuario.isEstado()}');" style="cursor:pointer;"/>
+                                                            </c:if> 
+                                                            <c:if test="${Usuario.isEstado() eq 'false'}">
+                                                                <input type="checkbox"  id="Estado" name="toggle" onclick="estUserEdit('${Usuario.getIdtblusuarios()}', '${Usuario.isEstado()}');" style="cursor:pointer;">
+                                                            </c:if>
+                                                            <label for="toggle"><i></i></label>
+                                                            <span></span>
+                                                        </div>
+                                                    </td>                                                         
+                                                    <td align="center"><img src="Resources/image/Ver.png" style="cursor:pointer;" onclick="cargaInfoUsuarios(${Usuario.getIdtblusuarios()})" alt="" height="30" width="30"/></td>                      
                                                 </tr>
-                                            </thead>
-                                            <tbody>
-                                                <c:forEach items="${listaUsuario}" var="Usuario">
-                                                    <tr  scope="row">
-                                                        <td><c:out value="${Usuario.getNombre()}" /></td>
-                                                        <td><c:out value="${Usuario.getCorreo()}" /></td>
-                                                        <c:if test="${Usuario.isAccesomovil()}">
-                                                            <td align="center"><img src="Resources/image/check.png" alt="" height="20" width="20"/></td>
-                                                            </c:if>
-                                                            <c:if test="${!Usuario.isAccesomovil()}">
-                                                            <td align="center"><img src="Resources/image/error.png" alt="" height="20" width="20"/></td>
-                                                            </c:if>
-                                                            <c:if test="${Usuario.isAccesoweb()}">
-                                                            <td align="center"><img src="Resources/image/check.png" alt="" height="20" width="20"/></td>
-                                                            </c:if>
-                                                            <c:if test="${!Usuario.isAccesoweb()}">
-                                                            <td align="center"><img src="Resources/image/error.png" alt="" height="20" width="20"/></td>                                            
-                                                            </c:if>
-
-                                                            <td align="center"> 
-                                                                <div class="switch2">
-                                                                    <c:if test="${Usuario.isEstado() eq 'true'}">
-                                                                        <input type="checkbox"  id="Estado" name="toggle" checked onclick="estUserEdit('${Usuario.getIdtblusuarios()}', '${Usuario.isEstado()}');" style="cursor:pointer;"/>
-                                                                    </c:if> 
-                                                                    <c:if test="${Usuario.isEstado() eq 'false'}">
-                                                                        <input type="checkbox"  id="Estado" name="toggle" onclick="estUserEdit('${Usuario.getIdtblusuarios()}', '${Usuario.isEstado()}');" style="cursor:pointer;">
-                                                                    </c:if>
-                                                                    <label for="toggle"><i></i></label>
-                                                                    <span></span>
-                                                                </div>
-                                                            </td>                                                         
-                                                                                                                       
-                                                            <!--<c:if test="${Usuario.isEstado()}">
-                                                            <td align="center"><img src="Resources/image/desactivar.png" alt="" width="40" onclick="estUserEdit('${Usuario.getIdtblusuarios()}', '${Usuario.isEstado()}');" style="cursor:pointer;"/></td>
-                                                            </c:if>
-                                                            <c:if test="${!Usuario.isEstado()}">
-                                                            <td align="center"><img src="Resources/image/activar.png" alt="" width="40" onclick="estUserEdit('${Usuario.getIdtblusuarios()}', '${Usuario.isEstado()}');" style="cursor:pointer;"/></td>
-                                                            </c:if>-->
-                                                        <td align="center"><img src="Resources/image/Ver.png" style="cursor:pointer;" onclick="cargaInfoUsuarios(${Usuario.getIdtblusuarios()})" alt="" height="30" width="30"/></td>                      
-                                                    </tr>
-                                                </c:forEach>    
-                                            </tbody>
-                                        </table>
-                                    </c:if>
-                                    <input type="hidden" id="tempId">
-                                </div>
-                            </div>                                    
-                        </div>
-                        <br/>     
-
-                        <div class="col-md-1"></div>
-                    </fieldset>
-                    <div class="panel-footer">
+                                            </c:forEach>    
+                                        </tbody>
+                                    </table>
+                                </c:if>
+                                <input type="hidden" id="tempId">
+                            </div>
+                        </div>                                    
+                </div>
+                <br/>     
+                <div class="col-md-1"></div>
+                </fieldset>
+                <div class="panel-footer">
                     <div class="col-md-8"></div>
-                    <!--<button  id="btn-salir" type="button" class="btn btn-default" data-dismiss="modal" onclick="cargarContenido('vacio.htm', 'contenido');">Salir</button>-->
                     <br>
                     <br>
                     <br>
                 </div> 
-                </div>
-                
-            </div>
-
+            </div>      
         </div>
     </div>
-
+</div>
 </div>
 </div>
 </div>

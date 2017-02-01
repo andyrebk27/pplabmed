@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pplabmed.controller;
 
 import java.math.BigInteger;
@@ -30,73 +25,51 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-/**
- *
- * @author Administrador
- */@Controller
-    
+@Controller
+
 public class MappingController {
+
     @RequestMapping("/inicio.htm")
-    public String index(){
+    public String index() {
         return "index";
     }
-    
+
     @RequestMapping("/principal.htm")
-    public String principal(){
+    public String principal() {
         return "principal";
     }
-    
+
     @RequestMapping("/menu.htm")
-    public String menuSuperior(){
+    public String menuSuperior() {
         return "MenuPrincipal";
     }
-    
-    
+
     @RequestMapping("/logo.htm")
-    public String logo(){
+    public String logo() {
         return "logo";
     }
-    
-//    @RequestMapping("/histopatologia.htm")
-//    public String ResultadoHispatologia(){
-//        return "Resultados/Histopatologia";
-//    }
-        
-//    @RequestMapping("/citologia.htm")
-//    public String Citologia(Model m){
-//         CitologiaDAO opc = new CitologiaDAO();
-//        return "Resultados/Citologia";
-//    }
 
-             
     @RequestMapping("/NuevaFirma.htm")
-    public String NuevaFirma(){        
-    return "Parametria/NuevaFirma";
+    public String NuevaFirma() {
+        return "Parametria/NuevaFirma";
     }
-    
-//    
-//    @RequestMapping("/idCito.htm")
-//    public String AgregarIdCitologia(){
-//        return "Parametria/NuevoIdCito";
-//    }
-//    
+
     @RequestMapping("/vacio.htm")
-    public String PagSinContenido(){
+    public String PagSinContenido() {
         return "Vacio";
     }
-    
+
     @RequestMapping("/Pefiles.htm")
-    public String NuevoPerfil(Model m){
+    public String NuevoPerfil(Model m) {
         System.out.println("llega aqui-------------------------");
         perfilDAO opc = new perfilDAO();
-        ArrayList<Permisos> listaPermisosArray = opc.listaPermisosArray();        
-        m.addAttribute("listaPermisosArray",listaPermisosArray);
+        ArrayList<Permisos> listaPermisosArray = opc.listaPermisosArray();
+        m.addAttribute("listaPermisosArray", listaPermisosArray);
         return "Seguridad/NuevoPerfil";
-    }       
-    
-   
-     @RequestMapping("/ListaPerfiles.htm")
-    public String ListaPerfiles(Model m){
+    }
+
+    @RequestMapping("/ListaPerfiles.htm")
+    public String ListaPerfiles(Model m) {
         perfilDAO opc = new perfilDAO();
         List listaP = opc.listaPerfiles();
         ArrayList<String> idp = new ArrayList<String>();
@@ -110,36 +83,25 @@ public class MappingController {
             descripcion.add((String) datos[2].toString());
             estado.add((String) datos[3].toString());
         }
-        m.addAttribute("idp",idp);
-        m.addAttribute("nomperf",nombre);
-        m.addAttribute("desL",descripcion);
-        m.addAttribute("estL",estado);
+        m.addAttribute("idp", idp);
+        m.addAttribute("nomperf", nombre);
+        m.addAttribute("desL", descripcion);
+        m.addAttribute("estL", estado);
         return "Seguridad/ListaPerfiles";
     }
-    
+
     @RequestMapping("/Bitacora.htm")
-    public String Bitacora(){
+    public String Bitacora() {
         return "Seguridad/Bitacora";
     }
-     
+
     @RequestMapping("/BuscarReportes.htm")
-    public String BuscarReportes(){
+    public String BuscarReportes() {
         return "HojasdeTrabajo/BuscarReportes";
     }
-    
+
     @RequestMapping("/Patologia.htm")
-    public String Patologia(){
+    public String Patologia() {
         return "EstadisticaPatologia/Patologia";
     }
-    
-//    @RequestMapping("/listaFirmas.htm")
-//    public String listaFirmas(){
-//        return "Parametria/listaFirmas";
-//    }
-   
-//    @RequestMapping("/ListaIDCitologia.htm")
-//    public String ListaIDCitologia(){
-//        return "Parametria/ListaIDCitologia";
-//    }
-    
 }
